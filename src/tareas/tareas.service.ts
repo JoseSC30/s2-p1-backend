@@ -57,4 +57,10 @@ export class TareasService {
     async deleteAllTareas() {
         return this.prisma.tareas.deleteMany({});
     }
+
+    async getTareasByEstado(estado: boolean) {
+        return this.prisma.tareas.findMany({
+            where: { estado },
+        });
+    }
 }
