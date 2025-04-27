@@ -53,4 +53,8 @@ export class TareasService {
             where: { id },
         });
     }
+
+    async deleteAllTareas() {
+        return this.prisma.tareas.deleteMany({});
+    }
 }
