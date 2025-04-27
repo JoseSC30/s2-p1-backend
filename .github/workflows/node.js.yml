@@ -15,4 +15,7 @@ jobs:
     steps:
       - name: 'HOLA MuNDO'
         run: echo "Hello WRLOD"
-        
+      - name: Dame la fecha
+        run: date
+      - name: Mostrando el contenido del directorio
+        run: ls -la
