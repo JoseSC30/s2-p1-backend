@@ -15,7 +15,14 @@ jobs:
     steps:
       - name: 'HOLA MuNDO'
         run: echo "Hello WRLOD"
-      - name: Dame la fecha
-        run: date
-      - name: Mostrando el contenido del directorio
-        run: ls -la
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+      - name: 'Instalando dependencias'
+        run: npm install
+      - name: 'Ejecutando pruebas'
+        run: npm test
+      - name: 'Ejecutando build'
+        run: npm run build
