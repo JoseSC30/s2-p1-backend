@@ -69,4 +69,10 @@ export class TareasService {
             where: { fecha },
         });
     }
+
+    async getTareasByNombre(nombre: string) {
+        return this.prisma.tareas.findMany({
+            where: { nombre },
+        });
+    }
 }
